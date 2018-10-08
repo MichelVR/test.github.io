@@ -1,0 +1,25 @@
+﻿.formularioRegistroizq {
+    background-color: red;
+    height: 80px;
+    width: 320px;
+}
+
+.textoinput {
+    width: 278px;
+    margin-left: 20px;
+}
+
+.formularioRegistroder {
+    background-color: red;
+    height: 80px;
+    width: 320px;
+}
+
+.registrarsubempresa {
+    margin-left: 450px;
+    /*background-color: darkgrey;*/
+    height: 717px;
+    margin-top: 65px;
+    width: 730px;
+}
+
