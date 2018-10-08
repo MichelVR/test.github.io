@@ -1,0 +1,130 @@
+﻿@model Proyecto_RadixWeb.Models.personas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>personas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Per_Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Per_Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Per_ApePat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Per_ApePat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Per_ApeMat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Per_ApeMat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Per_Dir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Per_Dir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Per_Tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Per_Tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Per_Suel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Per_Suel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Per_Des)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Per_Des)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cargos.Car_Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cargos.Car_Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estadosciviles.EC_Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estadosciviles.EC_Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fichadescuentos.Desc_Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fichadescuentos.Desc_Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.generos.Gen_Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.generos.Gen_Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nacionalidades.Nac_Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nacionalidades.Nac_Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tiposhorasextras.THor_Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tiposhorasextras.THor_Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipoimpuestos.TImp_nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoimpuestos.TImp_nom)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Per_Rut }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

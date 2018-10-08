@@ -1,0 +1,58 @@
+﻿@model Proyecto_RadixWeb.Models.horario_laboral
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>horario_laboral</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Hl_Inicio)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Hl_Inicio)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Hl_Termino)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Hl_Termino)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.cargos.Car_Nom)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.cargos.Car_Nom)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.diassemanales.Ds_Nom)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.diassemanales.Ds_Nom)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Hl_Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

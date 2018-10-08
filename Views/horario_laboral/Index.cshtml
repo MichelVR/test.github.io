@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Proyecto_RadixWeb.Models.horario_laboral>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Hl_Inicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hl_Termino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cargos.Car_Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.diassemanales.Ds_Nom)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hl_Inicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hl_Termino)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cargos.Car_Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.diassemanales.Ds_Nom)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Hl_Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Hl_Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Hl_Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -1,0 +1,107 @@
+﻿@model Proyecto_RadixWeb.Models.MultipleHorario
+
+@{
+    ViewBag.Title = "HorarioSemanal";
+}
+<link href="~/Content/estilo.css" rel="stylesheet" />
+<h2>HorarioSemanal</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+
+    <tr>
+        @foreach (var dias in Model.objDias)
+        {
+            <th>
+                @Html.DisplayFor(modelItem => dias.Ds_Nom)
+            </th>
+        }
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.objHorario)
+    {
+
+        if (item.Ds_Id == 1)
+        {
+            <tr >
+                <td class="horariolunes" style="    background-color: red;">
+                    @Html.DisplayFor(modelItem => item.Hl_Inicio)
+                    @Html.DisplayFor(modelItem => item.Hl_Termino)
+                    @Html.DisplayFor(modelItem => item.diassemanales.Ds_Nom)
+                </td>
+            </tr>
+
+        }
+
+        if (item.Ds_Id == 2)
+        {
+            <tr class="horariomartes">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hl_Inicio)
+                    @Html.DisplayFor(modelItem => item.Hl_Termino)
+                    @Html.DisplayFor(modelItem => item.diassemanales.Ds_Nom)
+                </td>
+            </tr>
+
+        }
+        if (item.Ds_Id == 3)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hl_Inicio)
+                    @Html.DisplayFor(modelItem => item.Hl_Termino)
+                    @Html.DisplayFor(modelItem => item.diassemanales.Ds_Nom)
+                </td>
+            </tr>
+
+        }
+        if (item.Ds_Id == 4)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hl_Inicio)
+                    @Html.DisplayFor(modelItem => item.Hl_Termino)
+                    @Html.DisplayFor(modelItem => item.diassemanales.Ds_Nom)
+                </td>
+            </tr>
+
+        }
+        if (item.Ds_Id == 5)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hl_Inicio)
+                    @Html.DisplayFor(modelItem => item.Hl_Termino)
+                    @Html.DisplayFor(modelItem => item.diassemanales.Ds_Nom)
+                </td>
+            </tr>
+
+        }
+        if (item.Ds_Id == 6)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hl_Inicio)
+                    @Html.DisplayFor(modelItem => item.Hl_Termino)
+                    @Html.DisplayFor(modelItem => item.diassemanales.Ds_Nom)
+                </td>
+            </tr>
+
+        }
+        if (item.Ds_Id == 7)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hl_Inicio)
+                    @Html.DisplayFor(modelItem => item.Hl_Termino)
+                    @Html.DisplayFor(modelItem => item.diassemanales.Ds_Nom)
+                </td>
+            </tr>
+
+        }
+
+    }
+</table>

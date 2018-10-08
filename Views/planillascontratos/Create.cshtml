@@ -1,0 +1,81 @@
+﻿@model Proyecto_RadixWeb.Models.planillascontratos
+
+@{
+    ViewBag.Title = "Create";
+}
+<link href="~/Content/estilo.css" rel="stylesheet" />
+
+
+
+@using (Html.BeginForm("Create", "planillascontratos", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal registrarsubempresa">
+    <h4 style="    margin-left: 180px;">Planilla de contratos</h4>
+    <hr />
+
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="input-group " style="margin-left: 80px;width: 450px;margin-bottom: 10px;">
+        <div class="input-group-prepend">
+            <span class="input-group-text " id="" style="width: 150px;">Titulo Archivo</span>
+        </div>
+        @Html.EditorFor(model => model.PC_Nom, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.PC_Nom, "", new { @class = "text-danger" })
+
+    </div>
+    
+    <div class="input-group" style="margin-left: 80px;width: 450px;margin-bottom: 10px;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="" style="width: 150px;">Estado</span>
+        </div>
+        <div style="background-color: white;">
+            <input type="file" name="plantilla" style="width: 300px;margin-left: 1px;margin-top: 5px;"/>
+        </div>
+    </div>
+
+
+
+
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.PC_Nom, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PC_Nom, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PC_Nom, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PC_Ext, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PC_Ext, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PC_Ext, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PC_Binario, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="plantilla" />
+            </div>
+        </div>*@
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-primary" style=" margin-left: 250px;" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

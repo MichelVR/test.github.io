@@ -1,0 +1,76 @@
+﻿@model Proyecto_RadixWeb.Models.MultipleClassLogin
+
+@{
+    ViewBag.Title = "Log in";
+}
+<!-- Custom styles for this template -->
+@*<link href="~/Content/signin.css" rel="stylesheet" />*@
+<div class="container">
+    <div class="row">
+        <div class="" style="width:450px;margin-left: 380px;height: 200px;">
+            <div class="form-login" style="margin-top: 5%;">
+                <section id="loginForm">
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <h4 style="margin-left: 17%;height: 30px;">Iniciar Sesión</h4>
+                        
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="input-group" style="height: 40px;">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            @*@Html.Label("Empresa", new { @class = "col-md-2 control-label " })*@
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.objEmpresas.Emp_Nom, new { @class = "form-control", placeholder = "Nombre Empresa" })
+                                @Html.ValidationMessageFor(m => m.objEmpresas.Emp_Nom, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="input-group" style="height: 40px;">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            @*@Html.Label("Email", new { @class = "col-md-2 control-label" })*@
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.objLogin.Email, new { @class = "form-control", placeholder = "Email" })
+                                @Html.ValidationMessageFor(m => m.objLogin.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="input-group" style="height: 40px;">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            @*@Html.LabelFor(m => m.objLogin.Password, new { @class = "col-md-2 control-label" })*@
+                            <div class="col-md-10">
+
+                                @Html.PasswordFor(m => m.objLogin.Password, new { @class = "form-control", placeholder = "Password" })
+                                @Html.ValidationMessageFor(m => m.objLogin.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <div class="checkbox">
+                                    @Html.CheckBoxFor(m => m.objLogin.RememberMe)
+                                    @Html.LabelFor(m => m.objLogin.RememberMe)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Iniciar Sesión" class="btn btn-primary" style="    margin-left: 96px;" />
+                            </div>
+                        </div>
+                        <p>
+                            @Html.ActionLink("Registrarse ?", "Register")
+                        </p>
+                        <p>
+                            @Html.ActionLink("Olvido su contraseña?", "ForgotPassword")
+                        </p>
+                    }
+                </section>
+            </div>
+            @*<div class="col-md-4">
+                    <section id="socialLoginForm">
+                        @Html.Partial("_ExternalLoginsListPartial", new IdentitySample.Models.ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                    </section>
+                </div>*@
+        </div>
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+    </div>
+</div>

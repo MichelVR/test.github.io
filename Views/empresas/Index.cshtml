@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Proyecto_RadixWeb.Models.empresas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<p>
+   
+</p>
+<div class="panel panel-success table-responsive">
+    <div class="panel-heading">Empresas</div>
+    <div class="panel-body" style="text-align:right"> @Html.ActionLink("Nueva Empresa", "Create") </div>
+    <table class="table table-striped table-sm">
+        <tr>
+            <th>
+                Empresa
+            </th>
+            <th>
+                Cantidad de subEmpresas
+            </th>
+            <th>
+               Estado
+            </th>
+            <th>
+               Direccion
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Emp_Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Emp_Cant)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Emp_Estado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Emp_Dir)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Emp_Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Emp_Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Emp_Id })
+                </td>
+              
+            </tr>
+        }
+
+    </table>
+    </div>
+

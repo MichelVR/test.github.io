@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Proyecto_RadixWeb.Models.cargos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+
+
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Car_Nom)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car_Nom)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Car_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Car_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Car_Id }) |
+                <a href="@Url.Action("HorarioSemanal", "horario_laboral", new { Car_Id = item.Car_Id })">                 
+                    Sub Empresas
+                </a>
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+

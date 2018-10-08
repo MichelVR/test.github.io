@@ -1,0 +1,74 @@
+﻿@model Proyecto_RadixWeb.Models.subempresas
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>subempresas</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Sub_Nom)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Sub_Nom)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Sub_Cant)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Sub_Cant)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Sub_Estado)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Sub_Estado)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Sub_Dir)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Sub_Dir)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.comunas.Com_Nom)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.comunas.Com_Nom)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.empresas.Emp_Nom)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.empresas.Emp_Nom)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Sub_Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

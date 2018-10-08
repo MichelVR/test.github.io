@@ -1,0 +1,42 @@
+﻿@model Proyecto_RadixWeb.Models.planillascontratos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>planillascontratos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PC_Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PC_Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PC_Ext)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PC_Ext)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PC_Binario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PC_Binario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PC_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

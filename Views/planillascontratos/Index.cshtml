@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Proyecto_RadixWeb.Models.planillascontratos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="height: 256px;width: 1000px;margin-left: 284px;margin-top: 65px;">
+
+    <h3>
+        @Html.ActionLink("Nueva Plantilla", "Create")
+    </h3>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PC_Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PC_Ext)
+            </th>
+            <th>
+                Descargar
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PC_Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PC_Ext)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Descargar Docx", "DescargarDocx", new { id = item.PC_Id })  |
+                    @Html.ActionLink("Descargar Pdf", "DescargarPdf", new { id = item.PC_Id })
+                </td>
+
+                @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PC_Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PC_Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PC_Id })
+                </td>*@
+            </tr>
+        }
+
+    </table>
+
+</div>

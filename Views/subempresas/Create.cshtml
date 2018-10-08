@@ -1,0 +1,186 @@
+﻿@model Proyecto_RadixWeb.Models.MultipleAgregarSubEmpresas
+
+@{
+    ViewBag.Title = "Create";
+}
+<link href="~/Content/estilo.css" rel="stylesheet" />
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal registrarsubempresa">
+    <h4>Nueva Sucursal</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+    <div class="input-group " style="margin-left: 80px;width: 450px;margin-bottom: 10px;">
+        <div class="input-group-prepend">
+            <span class="input-group-text " id="" style="width: 150px;">Nueva Sucursal</span>
+        </div>
+        @Html.Editor("Sub_Nom", new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.objSubEmpresas.Sub_Nom, "", new { @class = "text-danger" })
+       
+    </div>
+    <div class="input-group" style="margin-left: 80px;width: 450px;margin-bottom: 10px;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="" style="width: 150px;">Cantidad</span>
+        </div>
+        @Html.Editor("Sub_Cant", new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.objSubEmpresas.Sub_Cant, "", new { @class = "text-danger" })
+    </div>
+    <div class="input-group" style="margin-left: 80px;width: 450px;margin-bottom: 10px;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="" style="width: 150px;">Estado</span>
+        </div>
+        @Html.Editor("Sub_Estado", new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.objSubEmpresas.Sub_Estado, "", new { @class = "text-danger" })
+    </div>
+    <div class="input-group" style="margin-left: 80px;width: 450px;margin-bottom: 10px;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="" style="width: 150px;">Dirección</span>
+        </div>
+        @Html.Editor("Sub_Dir", new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.objSubEmpresas.Sub_Dir, "", new { @class = "text-danger" })
+    </div>
+    <div class="input-group" style="margin-left: 80px;width: 450px;margin-bottom: 10px;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="" style="width: 150px;">Región</span>
+        </div>
+        @if (ViewBag.regiones != null)
+        {
+            @Html.DropDownListFor(model => model.objRegiones.Reg_Id, ViewBag.regiones as SelectList, "--- Seleccionar Región ---", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.objRegiones.Reg_Id, "", new { @class = "text-danger" })
+
+        }
+    </div>
+    <div class="input-group" style="margin-left: 80px;width: 450px;margin-bottom: 10px;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="" style="width: 150px;">Provincia</span>
+        </div>
+        @Html.DropDownListFor(model => model.objProvincias.Prov_Id, new SelectList(" "), "--- Seleccionar Provincia ---", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.objProvincias.Prov_Id, "", new { @class = "text-danger" })
+    </div>
+    <div class="input-group" style="margin-left: 80px;width: 450px;margin-bottom: 10px;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="" style="width: 150px;">Comuna</span>
+        </div>
+        @Html.DropDownList("Com_Id", new SelectList(" "), "--- Seleccionar Comuna ---", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.objComunas.Com_Id, "", new { @class = "text-danger" })
+    </div>
+
+
+
+    @*<div class="form-group formularioRegistroizq">
+        @Html.LabelFor(model => model.objSubEmpresas.Sub_Nom, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="textoinput">
+            @Html.Editor("Sub_Nom", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.objSubEmpresas.Sub_Nom, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+
+    <div class="form-group formularioRegistroizq">
+        @Html.LabelFor(model => model.objSubEmpresas.Sub_Cant, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="textoinput">
+            @Html.Editor("Sub_Cant", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.objSubEmpresas.Sub_Cant, "", new { @class = "text-danger" })
+        </div>
+    </div>*@
+
+
+
+    @*<div class="form-group formularioRegistroizq">
+        @Html.LabelFor(model => model.objSubEmpresas.Sub_Estado, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="textoinput">
+            @Html.Editor("Sub_Estado", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.objSubEmpresas.Sub_Estado, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group formularioRegistroizq">
+        @Html.LabelFor(model => model.objSubEmpresas.Sub_Dir, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="textoinput">
+            @Html.Editor("Sub_Dir", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.objSubEmpresas.Sub_Dir, "", new { @class = "text-danger" })
+        </div>
+    </div>*@
+
+    @*<div class="form-group formularioRegistroder">
+        @Html.LabelFor(model => model.objRegiones.Reg_Id, "Reg_Id", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="textoinput">
+            @if (ViewBag.regiones != null)
+            {
+                @Html.DropDownListFor(model => model.objRegiones.Reg_Id, ViewBag.regiones as SelectList, "--- Seleccionar Región ---", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.objRegiones.Reg_Id, "", new { @class = "text-danger" })
+
+            }
+
+        </div>
+    </div>
+    <div class="form-group formularioRegistroder">
+        @Html.LabelFor(model => model.objProvincias.Prov_Id, "Prov_Id", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="textoinput">
+
+            @Html.DropDownListFor(model => model.objProvincias.Prov_Id, new SelectList(" "), "--- Seleccionar Provincia ---", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.objProvincias.Prov_Id, "", new { @class = "text-danger" })
+
+
+
+        </div>
+    </div>
+    <div class="form-group formularioRegistroder">
+        @Html.LabelFor(model => model.objSubEmpresas.Com_Id, "Com_Id", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="textoinput">
+
+            @Html.DropDownList("Com_Id", new SelectList(" "), "--- Seleccionar Comuna ---", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.objComunas.Com_Id, "", new { @class = "text-danger" })
+
+        </div>
+    </div>*@
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Agregar Sucursal" class="btn btn-primary" style="margin-left: 250px;width: 150px;" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Volver", "Index", new { emp_nom = @ViewBag.empresa, emp_id = @ViewBag.emp_id })
+</div>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#objRegiones_Reg_Id").change(function () {
+            $.get("/subempresas/ObtenerProvincia", { Reg_Id: $("#objRegiones_Reg_Id").val() }, function (data) {
+                $("#objProvincias_Prov_Id").empty();
+                $.each(data, function (Create, row) {
+
+                    $("#objProvincias_Prov_Id").append("<option value='" + row.Prov_Id + "'>" + row.Prov_Nom + "</option>")
+                });
+            });
+        })
+    });
+
+        $(document).ready(function () {
+
+            $("#objProvincias_Prov_Id").change(function () {
+                $.get("/subempresas/ObtenerComuna", { Prov_Id: $("#objProvincias_Prov_Id").val() }, function (data) {
+                    $("#Com_Id").empty();
+                    $.each(data, function (Create, row) {
+
+                        $("#Com_Id").append("<option value='" + row.Com_Id + "'>" + row.Com_Nom + "</option>")
+                    });
+                });
+            })
+        });
+</script>

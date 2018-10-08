@@ -1,0 +1,58 @@
+﻿@model Proyecto_RadixWeb.Models.empresas
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>empresas</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Emp_Nom)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Emp_Nom)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Emp_Cant)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Emp_Cant)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Emp_Estado)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Emp_Estado)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Emp_Dir)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Emp_Dir)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Emp_Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

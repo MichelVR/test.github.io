@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Proyecto_RadixWeb.Models.planillascontratos>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Documentos</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PC_NombreArch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PC_Rev)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PC_Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PC_PesoArch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PC_Binario)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PC_NombreArch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PC_Rev)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PC_Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PC_PesoArch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PC_Binario)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.PC_Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.PC_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.PC_Id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

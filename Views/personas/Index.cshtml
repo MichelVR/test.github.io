@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Proyecto_RadixWeb.Models.personas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Per_Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Per_ApePat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Per_ApeMat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Per_Dir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Per_Tel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Per_Suel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Per_Des)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cargos.Car_Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estadosciviles.EC_Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fichadescuentos.Desc_Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.generos.Gen_Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nacionalidades.Nac_Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tiposhorasextras.THor_Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipoimpuestos.TImp_nom)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per_Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per_ApePat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per_ApeMat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per_Dir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per_Tel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per_Suel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per_Des)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cargos.Car_Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estadosciviles.EC_Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fichadescuentos.Desc_Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.generos.Gen_Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nacionalidades.Nac_Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tiposhorasextras.THor_Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipoimpuestos.TImp_nom)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Per_Rut }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Per_Rut }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Per_Rut })
+        </td>
+    </tr>
+}
+
+</table>
